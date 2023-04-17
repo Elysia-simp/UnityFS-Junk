@@ -12,7 +12,6 @@ for root, dirs, files in os.walk(directory):
         file_path = os.path.join(root, file)
         with open(file_path, 'r+b') as f:
             if remove_offset:
-                # remove the first 0x14 bytes
                 f.seek(seek_start)
                 data = f.read()
                 f.seek(0)
